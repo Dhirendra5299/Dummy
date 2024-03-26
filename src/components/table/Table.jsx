@@ -6,43 +6,43 @@ import EditIcon from "@mui/icons-material/Edit";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-
+ 
 const MAX_ENTRIES= 3;
-
-export default function Table({ data }) {
-
+ 
+export default function Table({ data, edit }) {
+ 
   const size= data.length;
   const [pageCount, setPageCount]= useState(1);
   const [decrementIsDisable, setDecrementIsDisable]= useState(false);
   const [incrementIsDisable, setIncrementIsDisable]= useState(false);
-
+ 
   const ul = (pageCount * MAX_ENTRIES) - 1;
   const ll = (pageCount - 1) * MAX_ENTRIES;
-
+ 
   useEffect(() => {
     if (ul+1 >= size) {
       setIncrementIsDisable(true);
     } else {
       setIncrementIsDisable(false);
     }
-
+ 
     if (ll === 0) {
       setDecrementIsDisable(true);
     } else {
       setDecrementIsDisable(false);
     }
-  }, [pageCount, size]);
-
+  }, [ll, ul]);
+ 
   const subArray= data.slice(ll, ul+1);
-
+ 
   function onIncrement(){
     setPageCount(pageCount+1);
   }
-
+ 
   function onDecrement(){
     setPageCount(pageCount-1);
   }
-
+ 
   return (
     <>
       <table>
@@ -64,7 +64,7 @@ export default function Table({ data }) {
           </tr>
         </thead>
         <tbody>
-
+ 
           {subArray.map((item, index) => (
             <tr key={index}>
               {Object.values(item).map((value, index) => (
@@ -74,7 +74,7 @@ export default function Table({ data }) {
                 <FileCopyIcon
                   className={`${styles.icon} ${styles.icon_style}`}
                 />
-                <EditIcon className={`${styles.icon} ${styles.icon_style}`} />
+                <EditIcon className={`${styles.icon} ${styles.icon_style}`} onClick= {() => edit(index + ll)}/>
                 <MoreVertIcon className={styles.icon_style} />
               </td>
             </tr>

@@ -1,0 +1,13 @@
+.table_head{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .table_head div{
+    padding: 10px 20px;
+  }
+  
+  .table_head_left{
+    margin-top: 10px;
+    font-weight: bold;
+  }

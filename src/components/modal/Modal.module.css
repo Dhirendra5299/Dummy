@@ -3,13 +3,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: #e4ddd4; */
     border-radius: 6px;
     border: none;
     box-shadow: 0 2pc 8px rgba(0, 0, 0, 0.6);
-    padding: 1rem;
-    width: 95%;
-    /* max-width: 40rem; */
+    width: 60%;
+    height: 80%;
     animation: fade-slide-up 0.3s ease-out forward;
     font-size: 12px;
 }

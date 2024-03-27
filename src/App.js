@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import Table from './components/table/Table';
 import Modal from './components/modal/Modal';
 import FormComp from './components/formComp/FormComp';
+import DialogBox from './componentsR/dialogbox/DialogBox';
  
 const data = [
   {
@@ -98,7 +99,8 @@ function App() {
       </div>
       <Table data={data} edit= {handleEdit}/>
       <Modal open={modalData.isModalOpen} onClose= {handleCloseModal}>
-        <FormComp onSubmit={handleFormSubmit} editData={modalData.editIndex !== null ? data[modalData.editIndex] : null}/>
+        {/* <FormComp onSubmit={handleFormSubmit} editData={modalData.editIndex !== null ? data[modalData.editIndex] : null}/> */}
+        <DialogBox onClose= {handleCloseModal}/>
       </Modal>
     </div>
   );

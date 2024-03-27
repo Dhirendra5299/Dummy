@@ -1,0 +1,233 @@
+/* .dialogBox {
+  margin: 2rem;
+}
+.dialogBox h3 {
+  margin-bottom: 15px;
+  margin-top: 0px;
+  float: left;
+}
+.dialogBox > button {
+  float: right;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  padding: 2px 2px;
+}
+.dialogBox > button:hover {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  padding: 2px 2px;
+}
+form {
+  clear: both;
+}
+.one input {
+  width: 80%;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.one {
+  width: 40%;
+  float: left;
+}
+.two {
+  display: inline-block;
+  margin-left: 70px;
+}
+.two p {
+  margin-top: 0px;
+}
+.radiobtn {
+  margin-left: 20px;
+}
+.drop {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+}
+.toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.value {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+.action .extend {
+  width: 25%;
+  margin-top: 5px;
+}
+.small {
+  width: 100.66px;
+  margin-top: 5px;
+  margin-left: 60px;
+}
+.small span {
+  background-color: #4169e1;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+.end {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  justify-content: flex-end;
+  margin-top: 25px;
+  margin-right: 35%;
+}
+.end button {
+  padding: 5px 20px;
+  border-radius: 25px;
+  border: 2px solid blue;
+}
+.cancel {
+  background-color: white;
+  color: blue;
+  font-weight: 700;
+}
+.cancel:hover {
+  background-color: #b4b4b4;
+  cursor: pointer;
+}
+.create {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+}
+.create:hover {
+  background-color: #3457d5;
+  cursor: pointer;
+} */
+
+
+
+.dialogBox {
+  margin: 2rem;
+}
+.dialogBox h3 {
+  margin-bottom: 15px;
+  margin-top: 0px;
+  float: left;
+}
+.dialogBox > button {
+  float: right;
+  background-color: white;
+  border: none;
+}
+.dialogBox > button:hover {
+  color: white;
+  background-color: red;
+}
+form {
+  clear: both;
+}
+.one input {
+  width: 80%;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.one {
+  width: 40%;
+  float: left;
+}
+.two {
+  display: inline-block;
+  margin-left: 70px;
+}
+.two p {
+  margin-top: 0px;
+}
+.radiobtn {
+  margin-left: 20px;
+}
+.drop {
+  display: flex;
+  flex-direction: row;
+  gap: 14%;
+}
+.toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.value {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+.action .extend {
+  width:267.48px;
+  margin-top: 5px;
+}
+.small {
+  width: 100.66px;
+  margin-top: 5px;
+  margin-left: 60px;
+}
+.small span {
+  background-color: #4169e1;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+.end {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  justify-content: flex-end;
+  margin-top: 25px;
+  margin-right: 35%;
+}
+.end button {
+  padding: 5px 20px;
+  border-radius: 25px;
+  border: 2px solid blue;
+}
+.cancel {
+  background-color: white;
+  color: blue;
+  font-weight: 700;
+}
+.cancel:hover {
+  background-color: #b4b4b4;
+  cursor: pointer;
+}
+.create {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+}
+.create:hover {
+  background-color: #3457d5;
+  cursor: pointer;
+}

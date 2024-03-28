@@ -4,23 +4,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    border: none;
+    background-color: #272626;
 }
 
 .innerBox{
     border: 1px solid black;
+    border-radius: 5px;
     width: 50%;
-    height: 45%;
-    padding: 10px;
+    padding: 10px 15px 30px 15px;
+    background-color: #ffffff;
 }
 
 .closeDiv{
     text-align: right;
 }
 
+.crossBtn {
+    color: #BBBBBB;
+    background-color: white;
+    border: none;
+  }
+  .crossBtn:hover {
+    color: white;
+    background-color: red;
+  }
+
 .inputDiv{
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .inputDiv label{
@@ -32,6 +45,48 @@
 .inputDiv input{
     width: 80%;
     height: 30px;
+    border: 1px solid #000000;
     border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 4px;
+}
+
+.error{
+    color: red;
+}
+
+.btncontainer{
+    width: 80%;
+    text-align: right;
+    padding: 0px 10px;
+}
+
+.subbtn{
+    background-color: #dde2e8;
+    border: 1px solid #7ca5de;
+    color: #7ca5de;
+    margin-right: 5px;
+}
+
+.subbtn:hover{
+    color: #dde2e8;
+    background-color: #7ca5de;
+    cursor: pointer;
+}
+
+.subbtn, .cancelbtn{
+    border-radius: 15px;
+    padding: 5px 20px;
+}
+
+.cancelbtn{
+    background-color: #ffffff;
+    border: 1px solid rgb(61, 61, 234);
+    color: rgb(61, 61, 234);
+    margin-left: 5px;
+}
+
+.cancelbtn:hover{
+    background-color: rgb(61, 61, 234);
+    color: #ffffff;
+    cursor: pointer;
 }

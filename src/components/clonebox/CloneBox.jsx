@@ -1,26 +1,49 @@
 import CloseIcon from "@mui/icons-material/Close";
-import Button from "../button/Button";
 
 import styles from "./CloneBox.module.css";
+import { useState } from "react";
 
 export default function CloneBox({ onClose, data }) {
+    console.log(data['Asset Type Name']);
+const [assetTypeName, setAssetTypeName]= useState(data && data['Asset Type Name'] ? data['Asset Type Name'] : '');
+const [error, setError]= useState('');
+
+const handleChange = (e) => {
+    setAssetTypeName(e.target.value);
+    setError('');
+};
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+    if(!assetTypeName.trim()){
+        setError('Please Enter Asset Type Name');
+    }else{
+        //code for submission
+    }
+};
+
   return (
-    <div className={styles.cloneBox}>
+    <form className={styles.cloneBox}>
 
       <div className={styles.innerBox}>
         <div className={styles.closeDiv}>
-          <CloseIcon onClick={onClose}/>
+          <CloseIcon className={styles.crossBtn} onClick={onClose}/>
         </div>
         <div className={styles.inputDiv}>
           <label htmlFor="assetInput">Asset Type Name</label>
-          <input id="assetInput" />
+          <input 
+          id="assetInput" 
+          value={assetTypeName}
+          onChange={handleChange}  
+          />
+          {error && <div className={styles.error}>{error}</div>}
         </div>
-        <div>
-          <Button handleClick={() => null}>Submit</Button>
-          <button onClick={onClose}>Close</button>
+        <div className={styles.btncontainer}>
+          <button type="submit" className={styles.subbtn} onClick={handleSubmit}>Submit</button>
+          <button type="button" onClick={onClose} className={styles.cancelbtn}>Cancel</button>
         </div>
       </div>
 
-    </div>
+    </form>
   );
 }

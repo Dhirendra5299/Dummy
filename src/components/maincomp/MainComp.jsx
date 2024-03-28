@@ -8,6 +8,7 @@ import Table from "../table/Table";
 import Modal from "../modal/Modal";
 import FormComp from "../formComp/FormComp";
 import DialogBox from "../../componentsR/dialogbox/DialogBox";
+import CloneBox from "../clonebox/CloneBox";
 
 const data = [
   {
@@ -56,6 +57,8 @@ export default function MainComp() {
   const [modalData, setModalData] = useState({
     isModalOpen: false,
     editIndex: null,
+    isClone: false,
+    cloneData: null
   });
 
   const handleNewAssetTypeClick = () => {
@@ -66,7 +69,6 @@ export default function MainComp() {
   };
 
   const handleEdit = (index) => {
-    console.log(index);
     setModalData((prevModalData) => ({
       ...prevModalData,
       editIndex: index,
@@ -74,10 +76,22 @@ export default function MainComp() {
     }));
   };
 
+  const handleClone = (event) => {
+    setModalData((prevModalData) => ({
+      ...prevModalData,
+      isClone: true,
+      cloneData: event.item,
+      isModalOpen: true,
+    }))
+  };
+
   const handleCloseModal = () => {
     setModalData((prevModalData) => ({
       ...prevModalData,
       isModalOpen: false,
+      editIndex: null,
+      isClone: false,
+      cloneData: null
     }));
   };
 
@@ -86,8 +100,17 @@ export default function MainComp() {
       ...prevModalData,
       isModalOpen: false,
       editIndex: null,
+      isClone: false
     }));
   };
+
+  var modalChild= null;
+  if(modalData.isClone){
+    modalChild= <CloneBox onClose={handleCloseModal} data= {modalData.cloneData}/>
+  }
+  else{
+    modalChild= <DialogBox onClose={handleCloseModal} />
+  }
 
   return (
     <>
@@ -101,10 +124,11 @@ export default function MainComp() {
           </Button>
         </div>
       </div>
-      <Table data={data} edit={handleEdit} />
+      <Table data={data} edit={handleEdit} clone= {handleClone}/>
       <Modal open={modalData.isModalOpen} onClose={handleCloseModal}>
         {/* <FormComp onSubmit={handleFormSubmit} editData={modalData.editIndex !== null ? data[modalData.editIndex] : null}/> */}
-        <DialogBox onClose={handleCloseModal} />
+        {/* <DialogBox onClose={handleCloseModal} /> */}
+        {modalChild}
       </Modal>
     </>
   );

@@ -9,7 +9,7 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
  
 const MAX_ENTRIES= 3;
  
-export default function Table({ data, edit }) {
+export default function Table({ data, edit, clone }) {
  
   const size= data.length;
   const [pageCount, setPageCount]= useState(1);
@@ -18,6 +18,7 @@ export default function Table({ data, edit }) {
  
   const ul = (pageCount * MAX_ENTRIES) - 1;
   const ll = (pageCount - 1) * MAX_ENTRIES;
+
  
   useEffect(() => {
     if (ul+1 >= size) {
@@ -72,7 +73,10 @@ export default function Table({ data, edit }) {
               ))}
               <td>
                 <FileCopyIcon
-                  className={`${styles.icon} ${styles.icon_style}`}
+                  className={`${styles.icon} ${styles.icon_style}`} onClick= {(event) => {
+                    event.item= item;
+                    clone(event);
+                  }}
                 />
                 <EditIcon className={`${styles.icon} ${styles.icon_style}`} onClick= {() => edit(index + ll)}/>
                 <MoreVertIcon className={styles.icon_style} />

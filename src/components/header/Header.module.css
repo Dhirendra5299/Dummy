@@ -94,10 +94,14 @@
 
 
 @media screen and (max-width: 1202px) {
+  .header {
+    padding: 5px 10px;
+  }
   .header_left .logo {
     margin-right: 1rem;
     font-size: 16px;
     font-weight: bold;
+    width: 260px;
   }
   sup{
     font-size: 10px;
@@ -109,5 +113,12 @@
   .header_right ul li {
     margin-right: 1rem;
     font-size: 10px;
+  }
+  .header_right ul li.manage{
+    margin-right: 10px;
+  }
+  .header_right ul li.header_icon{
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }

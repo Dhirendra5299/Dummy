@@ -36,7 +36,7 @@ export default function CloneBox({ onClose, data }) {
             value={assetTypeName}
             onChange={handleChange}
           />
-          {error && <div className={styles.error}>{error}</div>}
+          <div className={styles.error}>{error}</div>
         </div>
         <div className={styles.btncontainer}>
           <button

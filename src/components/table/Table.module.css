@@ -1,97 +1,98 @@
-table{
-    width: 100%;
-    border-spacing: 0;
+table {
+  width: 100%;
+  border-spacing: 0;
 }
- 
-th{
-    background-color: #FAFAFA;
-    text-align: left;
+
+th {
+  background-color: #fafafa;
+  text-align: left;
 }
 
 th:not(:first-child) {
-    padding: 15px 5px;
-  }
+  padding: 15px 5px;
+}
 
-  tr th:first-child {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 5px;
-  }
-  
+tr th:first-child {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 5px;
+}
 
 .thcontainer {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .thArrow {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    flex-direction: column;
-    color: #BEBEBE;
-    position: relative; 
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
-  .arrow1, .arrow2 {
-    position: absolute;
-  }
+.thArrow {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  color: #bebebe;
+  position: relative;
+}
 
-  .arrow1{
-    top:-3px;
-  }
-  
-  .arrow2 {
-    top: 3px;
-  }
+.arrow1,
+.arrow2 {
+  position: absolute;
+}
 
-  .separator {
-    width: 1px;
-    height: 18px;
-    background-color: #EBEBEB;
-    margin-left: 30px;
-  }
+.arrow1 {
+  top: -3px;
+}
 
- 
-td{
-    border-bottom: 2px solid #f8f4f4;
+.arrow2 {
+  top: 3px;
+}
+
+.separator {
+  width: 1px;
+  height: 18px;
+  background-color: #ebebeb;
+  margin-left: 30px;
+}
+
+td {
+  border-bottom: 2px solid #f8f4f4;
 }
 
 td:not(:first-child) {
-    padding: 15px 5px;
-  }
+  padding: 15px 5px;
+}
 
-  tr td:first-child {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 5px;
-  }
+tr td:first-child {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 5px;
+}
 
 .icon {
-    color: #3253DC;
-  }
+  color: #3253dc;
+}
 
-  .icon_style{
-    margin: 0 10px;
-  }
+.icon_style {
+  margin: 0 10px;
+}
 
-  .noDataDiv{
-    text-align: center;
-    color: red;
-  }
+.noDataDiv {
+  text-align: center;
+  color: red;
+}
 
-  .moreOptions {
-    position: relative;
-  }
+.slideRight {
+  animation-name: slideRightAnimation;
+  animation-duration: 0.5s;
+}
 
-  .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000; 
+@keyframes slideRightAnimation {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-
-  
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

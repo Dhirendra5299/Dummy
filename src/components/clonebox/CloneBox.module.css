@@ -1,92 +1,93 @@
-.cloneBox{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: #272626;
+.cloneBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #272626;
 }
 
-.innerBox{
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 50%;
-    padding: 10px 15px 30px 15px;
-    background-color: #ffffff;
+.innerBox {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px 15px 30px 15px;
+  background-color: #ffffff;
 }
 
-.closeDiv{
-    text-align: right;
+.closeDiv {
+  text-align: right;
 }
 
 .crossBtn {
-    color: #BBBBBB;
-    background-color: white;
-    border: none;
-  }
-  .crossBtn:hover {
-    color: white;
-    background-color: red;
-  }
-
-.inputDiv{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  color: #bbbbbb;
+  background-color: white;
+  border: none;
+}
+.crossBtn:hover {
+  color: white;
+  background-color: red;
 }
 
-.inputDiv label{
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.inputDiv input{
-    width: 80%;
-    height: 30px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 4px;
+.inputDiv label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.error{
-    color: red;
+.inputDiv input {
+  width: 80%;
+  height: 30px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 4px;
 }
 
-.btncontainer{
-    width: 80%;
-    text-align: right;
-    padding: 0px 10px;
+.error {
+  color: red;
 }
 
-.subbtn{
-    background-color: #dde2e8;
-    border: 1px solid #7ca5de;
-    color: #7ca5de;
-    margin-right: 5px;
+.btncontainer {
+  width: 80%;
+  text-align: right;
+  padding: 0px 10px;
 }
 
-.subbtn:hover{
-    color: #dde2e8;
-    background-color: #7ca5de;
-    cursor: pointer;
+.subbtn {
+  background-color: #dde2e8;
+  border: 1px solid #7ca5de;
+  color: #7ca5de;
+  margin-right: 5px;
 }
 
-.subbtn, .cancelbtn{
-    border-radius: 15px;
-    padding: 5px 20px;
+.subbtn:hover {
+  color: #dde2e8;
+  background-color: #7ca5de;
+  cursor: pointer;
 }
 
-.cancelbtn{
-    background-color: #ffffff;
-    border: 1px solid rgb(61, 61, 234);
-    color: rgb(61, 61, 234);
-    margin-left: 5px;
+.subbtn,
+.cancelbtn {
+  border-radius: 15px;
+  padding: 5px 20px;
 }
 
-.cancelbtn:hover{
-    background-color: rgb(61, 61, 234);
-    color: #ffffff;
-    cursor: pointer;
+.cancelbtn {
+  background-color: #ffffff;
+  border: 1px solid rgb(61, 61, 234);
+  color: rgb(61, 61, 234);
+  margin-left: 5px;
+}
+
+.cancelbtn:hover {
+  background-color: rgb(61, 61, 234);
+  color: #ffffff;
+  cursor: pointer;
 }

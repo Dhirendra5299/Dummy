@@ -1,37 +1,35 @@
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* border-radius: 6px; */
-    border: none;
-    /* box-shadow: 0 2pc 8px rgba(0, 0, 0, 0.6); */
-    width: 60%;
-    height: 80%;
-    animation: fade-slide-up 0.3s ease-out forward;
-    font-size: 12px;
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  width: 60%;
+  height: 80%;
+  animation: fade-slide-up 0.3s ease-out forward;
+  font-size: 12px;
 }
 
-.modal::backdrop{
-    background-color: #272626;
+.modal::backdrop {
+  background-color: #272626;
 }
 
-@keyframes fade-slide-up{
-    from{
-        opacity: 0;
-        transform: translateY(4rem);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button {
-    color: #3253DC;
-    border: 1px solid #3253DC;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px 30px;
-    cursor: pointer;
-  }
+  color: #3253dc;
+  border: 1px solid #3253dc;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+}

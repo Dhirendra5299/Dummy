@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import styles from "./Header.module.css";
-import HelpIcon from '@mui/icons-material/Help';
-import PersonIcon from '@mui/icons-material/Person';
- 
+import HelpIcon from "@mui/icons-material/Help";
+import PersonIcon from "@mui/icons-material/Person";
+
 export default function Header() {
   return (
     <div className={styles.header}>
@@ -24,11 +24,8 @@ export default function Header() {
             </ul>
           </li>
           <li>Shipments</li>
-          <li>
-            Services
-           
-          </li>
-          <li className={`${styles.dropdown} ${styles.manage}`} >
+          <li>Services</li>
+          <li className={`${styles.dropdown} ${styles.manage}`}>
             Manage <span className={styles.rotate}>^</span>
             <ul>
               <li>Manage 1</li>
@@ -39,8 +36,12 @@ export default function Header() {
         </ul>
         <div className={styles.separator}></div>
         <ul>
-          <li className={styles.header_icon}><HelpIcon /></li>
-          <li className={styles.header_icon}><PersonIcon /></li>
+          <li className={styles.header_icon}>
+            <HelpIcon />
+          </li>
+          <li className={styles.header_icon}>
+            <PersonIcon />
+          </li>
         </ul>
       </div>
     </div>

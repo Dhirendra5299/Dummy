@@ -9,12 +9,13 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
  
 const MAX_ENTRIES= 3;
  
-export default function Table({ data, edit, clone }) {
+export default function Table({ data, edit, clone, onDelete}) {
  
   const size= data.length;
   const [pageCount, setPageCount]= useState(1);
   const [decrementIsDisable, setDecrementIsDisable]= useState(false);
   const [incrementIsDisable, setIncrementIsDisable]= useState(false);
+
  
   const ul = (pageCount * MAX_ENTRIES) - 1;
   const ll = (pageCount - 1) * MAX_ENTRIES;
@@ -32,9 +33,9 @@ export default function Table({ data, edit, clone }) {
     } else {
       setDecrementIsDisable(false);
     }
-  }, [ll, ul]);
+  }, [ll, ul, size]);
  
-  const subArray= data.slice(ll, ul+1);
+  const objects= data.slice(ll, ul+1);
  
   function onIncrement(){
     setPageCount(pageCount+1);
@@ -46,7 +47,7 @@ export default function Table({ data, edit, clone }) {
  
   return (
     <>
-      <table>
+    { (size !==0 ) && (<> <table>
         <thead>
           <tr>
             {Object.keys(data[0]).map((key) => (
@@ -65,27 +66,31 @@ export default function Table({ data, edit, clone }) {
           </tr>
         </thead>
         <tbody>
- 
-          {subArray.map((item, index) => (
-            <tr key={index}>
-              {Object.values(item).map((value, index) => (
+          {objects.map((object, index) => (
+            <tr key={index} className={`table-row ${object.deleted ? 'slide-out' : ''}`}>
+              {Object.values(object).map((value, index) => (
                 <td key={index}>{value}</td>
               ))}
               <td>
                 <FileCopyIcon
                   className={`${styles.icon} ${styles.icon_style}`} onClick= {(event) => {
-                    event.item= item;
+                    event.item= object;
                     clone(event);
                   }}
                 />
                 <EditIcon className={`${styles.icon} ${styles.icon_style}`} onClick= {() => edit(index + ll)}/>
-                <MoreVertIcon className={styles.icon_style} />
+                <MoreVertIcon className={styles.icon_style} onClick= {() => onDelete(object)}/>
               </td>
             </tr>
           ))}
         </tbody>
+        
       </table>
       <TabNav increment= {onIncrement} decrement={onDecrement} page= {pageCount} decrementDisable= {decrementIsDisable} incrementDisable= {incrementIsDisable}/>
+      </>) }
+      
+      {size ===0 && <div className={styles.noDataDiv}>No Data to show...</div>}
+      
     </>
   );
 }

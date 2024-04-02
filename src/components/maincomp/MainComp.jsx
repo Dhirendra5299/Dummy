@@ -10,50 +10,94 @@ import FormComp from "../formComp/FormComp";
 import DialogBox from "../../componentsR/dialogbox/DialogBox";
 import CloneBox from "../clonebox/CloneBox";
 
-const data = [
-  {
-    "Asset Type Name": "Alfreds Futterkiste",
-    "Product Name": "Maria Anders",
-    "Created On": "Germany",
-    "Created By": "John Doe",
-    "Last Updated": "2024-03-22",
-    "Updated By": "Jane Smith",
-  },
-  {
-    "Asset Type Name": "Centro comercial Moctezuma",
-    "Product Name": "Francisco Chang",
-    "Created On": "Mexico",
-    "Created By": "Alice",
-    "Last Updated": "2024-03-21",
-    "Updated By": "Bob",
-  },
-  {
-    "Asset Type Name": "Laptop",
-    "Product Name": "Lenovo",
-    "Created On": "India",
-    "Created By": "Dhirendra",
-    "Last Updated": "2024-05-21",
-    "Updated By": "John Smith",
-  },
-  {
-    "Asset Type Name": "Berglunds snabbköp",
-    "Product Name": "Christina Berglund",
-    "Created On": "Sweden",
-    "Created By": "James Johnson",
-    "Last Updated": "2024-03-21",
-    "Updated By": "Emily Brown",
-  },
-  {
-    "Asset Type Name": "Centro comercial Moctezuma",
-    "Product Name": "Francisco Chang",
-    "Created On": "Mexico",
-    "Created By": "Michael Williams",
-    "Last Updated": "2024-03-20",
-    "Updated By": "Sophia Martinez",
-  },
-];
+// const data = [
+//   {
+//     "Asset Type Name": "Alfreds Futterkiste",
+//     "Product Name": "Maria Anders",
+//     "Created On": "Germany",
+//     "Created By": "John Doe",
+//     "Last Updated": "2024-03-22",
+//     "Updated By": "Jane Smith",
+//   },
+//   {
+//     "Asset Type Name": "Centro comercial Moctezuma",
+//     "Product Name": "Francisco Chang",
+//     "Created On": "Mexico",
+//     "Created By": "Alice",
+//     "Last Updated": "2024-03-21",
+//     "Updated By": "Bob",
+//   },
+//   {
+//     "Asset Type Name": "Laptop",
+//     "Product Name": "Lenovo",
+//     "Created On": "India",
+//     "Created By": "Dhirendra",
+//     "Last Updated": "2024-05-21",
+//     "Updated By": "John Smith",
+//   },
+//   {
+//     "Asset Type Name": "Berglunds snabbköp",
+//     "Product Name": "Christina Berglund",
+//     "Created On": "Sweden",
+//     "Created By": "James Johnson",
+//     "Last Updated": "2024-03-21",
+//     "Updated By": "Emily Brown",
+//   },
+//   {
+//     "Asset Type Name": "Centro comercial Moctezuma",
+//     "Product Name": "Francisco Chang",
+//     "Created On": "Mexico",
+//     "Created By": "Michael Williams",
+//     "Last Updated": "2024-03-20",
+//     "Updated By": "Sophia Martinez",
+//   },
+// ];
 
 export default function MainComp() {
+
+  const [data, setData]= useState([
+    {
+      "Asset Type Name": "Alfreds Futterkiste",
+      "Product Name": "Maria Anders",
+      "Created On": "Germany",
+      "Created By": "John Doe",
+      "Last Updated": "2024-03-22",
+      "Updated By": "Jane Smith",
+    },
+    {
+      "Asset Type Name": "Centro comercial Moctezuma",
+      "Product Name": "Francisco Chang",
+      "Created On": "Mexico",
+      "Created By": "Alice",
+      "Last Updated": "2024-03-21",
+      "Updated By": "Bob",
+    },
+    {
+      "Asset Type Name": "Laptop",
+      "Product Name": "Lenovo",
+      "Created On": "India",
+      "Created By": "Jake Dorsie",
+      "Last Updated": "2024-03-21",
+      "Updated By": "Emily Brown",
+    },
+    {
+      "Asset Type Name": "Centro comercial Moctezuma",
+      "Product Name": "Francisco Chang",
+      "Created On": "Mexico",
+      "Created By": "Alice",
+      "Last Updated": "2024-03-21",
+      "Updated By": "Bob",
+    },
+    {
+      "Asset Type Name": "Berglunds snabbköp",
+      "Product Name": "Christina Berglund",
+      "Created On": "Sweden",
+      "Created By": "James Johnson",
+      "Last Updated": "2024-03-21",
+      "Updated By": "Emily Brown",
+    },
+  ]);
+
   const [modalData, setModalData] = useState({
     isModalOpen: false,
     editIndex: null,
@@ -104,6 +148,16 @@ export default function MainComp() {
     }));
   };
 
+  const handleDeleteData= (objToDelete) => {
+    const updatedData = data.filter(obj => obj !== objToDelete);
+    setData(updatedData);
+  }
+
+  const copyObj = (objToCopy) => {
+    const copiedData = [...data, objToCopy];
+    setData(copiedData);
+  };
+
   var modalChild= null;
   if(modalData.isClone){
     modalChild= <CloneBox onClose={handleCloseModal} data= {modalData.cloneData}/>
@@ -124,7 +178,7 @@ export default function MainComp() {
           </Button>
         </div>
       </div>
-      <Table data={data} edit={handleEdit} clone= {handleClone}/>
+      <Table data={data} edit={handleEdit} clone= {handleClone} onDelete= {handleDeleteData}/>
       <Modal open={modalData.isModalOpen} onClose={handleCloseModal}>
         {/* <FormComp onSubmit={handleFormSubmit} editData={modalData.editIndex !== null ? data[modalData.editIndex] : null}/> */}
         {/* <DialogBox onClose={handleCloseModal} /> */}

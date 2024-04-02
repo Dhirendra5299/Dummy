@@ -4,7 +4,7 @@ import styles from "./CloneBox.module.css";
 import { useState } from "react";
 
 export default function CloneBox({ onClose, data }) {
-    console.log(data['Asset Type Name']);
+    // console.log(data['Asset Type Name']);
 const [assetTypeName, setAssetTypeName]= useState(data && data['Asset Type Name'] ? data['Asset Type Name'] : '');
 const [error, setError]= useState('');
 

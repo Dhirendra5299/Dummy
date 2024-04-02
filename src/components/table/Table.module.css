@@ -77,4 +77,21 @@ td:not(:first-child) {
     margin: 0 10px;
   }
 
+  .noDataDiv{
+    text-align: center;
+    color: red;
+  }
+
+  .moreOptions {
+    position: relative;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000; 
+  }
+  
+
   

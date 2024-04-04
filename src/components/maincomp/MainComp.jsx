@@ -27,14 +27,14 @@ const DATA = [
     "Last Updated": "2024-03-21",
     "Updated By": "Bob",
   },
-  {
-    "Asset Type Name": "Laptop",
-    "Product Name": "Lenovo",
-    "Created On": "India",
-    "Created By": "Dhirendra",
-    "Last Updated": "2024-05-21",
-    "Updated By": "John Smith",
-  },
+  // {
+  //   "Asset Type Name": "Laptop",
+  //   "Product Name": "Lenovo",
+  //   "Created On": "India",
+  //   "Created By": "Dhirendra",
+  //   "Last Updated": "2024-05-21",
+  //   "Updated By": "John Smith",
+  // },
   {
     "Asset Type Name": "Berglunds snabbköp",
     "Product Name": "Christina Berglund",
@@ -43,14 +43,14 @@ const DATA = [
     "Last Updated": "2024-03-21",
     "Updated By": "Emily Brown",
   },
-  {
-    "Asset Type Name": "Centro",
-    "Product Name": "Francisco",
-    "Created On": "Mexico",
-    "Created By": "Michael",
-    "Last Updated": "2024-03-20",
-    "Updated By": "Sophia Martinez",
-  },
+  // {
+  //   "Asset Type Name": "Centro",
+  //   "Product Name": "Francisco",
+  //   "Created On": "Mexico",
+  //   "Created By": "Michael",
+  //   "Last Updated": "2024-03-20",
+  //   "Updated By": "Sophia Martinez",
+  // },
 ];
 
 export default function MainComp() {
